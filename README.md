@@ -8,4 +8,5 @@ AndroidStudio 사용자의 경우,
 2. 경고 해결하기  
 button에 아래의 코드 추가  
 ```style="?android:attr/borderlessButtonStyle"```  
--> 2번의 방법을 선택했습니다.  
+
+-> 2번째 방법을 선택했습니다.  
