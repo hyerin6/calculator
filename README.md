@@ -10,3 +10,21 @@ button에 아래의 코드 추가
 ```style="?android:attr/borderlessButtonStyle"```  
 
 -> 2번째 방법을 선택했습니다.  
+  
+  
+# HardCode 경고 해결   
+Values의 strings.xml 파일에 (예시)<string name="botton1">7</string> 와 같이 작성한다.   
+activity_main.xml 파일의 button의 text속성을 (예시)"@string/botton1”로 입력한다.  
+문자열 리소스 파일을 사용한 이유 :   
+[참고 - developer.android](https://developer.android.com/guide/topics/resources/localization)   
+  
+계산기 어플의 경우 text 변경사항이 크게 없지만 한가지 예를 들자면,  
+다국어를 지원하는 앱의 경우 리소스의 소스 코드를 분리시키는 것이 관리에 효율적이다.  
+
+ 
+# [EditText] 키보드 / 커서 숨기기  
+Activity_main.xml 의 EditText 태그에 inputType 속성은 삭제하고 아래의 코드를 작성한다.  
+```android:focusable="false"```  
+```android:cursorVisible="false"```  
+-> 사용자에게 키보드가 아닌 버튼으로 입력을 받고, 중간에 수정할 수 없도록하기 위함.  
+(첫번째 코드만 작성하면 롱클릭 시 focus가 생긴다. 두 코드를 전부 작성해야 focus 자체가 생성되지 않는다.)   
