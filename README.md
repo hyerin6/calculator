@@ -13,8 +13,8 @@ button에 아래의 코드 추가
   
   
 ### HardCode 경고 해결   
-Values의 strings.xml 파일에 (예시)<string name="botton1">7</string> 와 같이 작성한다.   
-activity_main.xml 파일의 button의 text속성을 (예시)"@string/botton1”로 입력한다.  
+Values의 strings.xml 파일에 (예시) ```<string name="botton1">7</string>``` 와 같이 작성한다.   
+activity_main.xml 파일의 button의 text속성을 (예시) ``` "@string/botton1”``` 로 입력한다.  
 문자열 리소스 파일을 사용한 이유 :   
 [참고 - developer.android](https://developer.android.com/guide/topics/resources/localization)   
   
