@@ -1,4 +1,4 @@
-# Buttons in button bars should be borderless..
+### Buttons in button bars should be borderless..
 경고를 해결하는 방법 2가지  
 
 1. 경고 무시하고 경고 끄기   
@@ -12,7 +12,7 @@ button에 아래의 코드 추가
 -> 2번째 방법을 선택했습니다.  
   
   
-# HardCode 경고 해결   
+### HardCode 경고 해결   
 Values의 strings.xml 파일에 (예시)<string name="botton1">7</string> 와 같이 작성한다.   
 activity_main.xml 파일의 button의 text속성을 (예시)"@string/botton1”로 입력한다.  
 문자열 리소스 파일을 사용한 이유 :   
@@ -22,7 +22,7 @@ activity_main.xml 파일의 button의 text속성을 (예시)"@string/botton1”�
 다국어를 지원하는 앱의 경우 리소스의 소스 코드를 분리시키는 것이 관리에 효율적이다.  
 
  
-# [EditText] 키보드 / 커서 숨기기  
+### [EditText] 키보드 / 커서 숨기기  
 Activity_main.xml 의 EditText 태그에 inputType 속성은 삭제하고 아래의 코드를 작성한다.  
 ```android:focusable="false"```  
 ```android:cursorVisible="false"```  
