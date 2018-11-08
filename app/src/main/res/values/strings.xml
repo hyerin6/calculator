@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">계산기</string>
-    <string name="input">입력하세요.</string>
+    <string name="input">계산을 시작해 보세요 !</string>
     <string name="botton1">7</string>
     <string name="botton2">8</string>
     <string name="botton3">9</string>
