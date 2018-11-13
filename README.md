@@ -105,7 +105,30 @@ Button.setOnClickListener(lis);
 >2. 리스너 클래스를 무명 클래스로 정의한다.   
 >3. 리스너 인터페이스를 액티비티 클래스에 구현한다.   
 >( 리스너 클래스를 내부 클래스로 정의할 수 있다. 내부 클래스란 클래스 안에 정의된 클래스를 의미한다.     
-내부 클래스는 자신이 속해있는 클래스의 멤버들에 자유롭게 접근하여 사용할 수 있다는 장점이 있다. )
+내부 클래스는 자신이 속해있는 클래스의 멤버들에 자유롭게 접근하여 사용할 수 있다는 장점이 있다. )   
+  
+* * *  
+   
+### 버튼 클릭 시 EditText에 출력
+```
+class MyListener implements View.OnClickListener{
+        public void onClick(View v){
+            final EditText e = (EditText)findViewById(R.id.e); 
+            String buttonStr = ((Button)v).getText().toString(); // 버튼이 가진 문자열을 buttonStr에 저장
+
+            if(buttonStr.equals("AC")) { // AC 누르면 전부 삭제
+                e.setText(""); // EditText에 Hint만 나오게..
+                s = ""; // s도 초기화 시켜준다. 
+            }
+            else {
+                s += buttonStr; // s는 MainActivity 클래스의 private 인스턴스 변수로 선언했다. 
+                e.setText(s); // EditText에 연산과정 전부 출력
+            }
+        }
+    }
+```    
+
+
 
 
 
