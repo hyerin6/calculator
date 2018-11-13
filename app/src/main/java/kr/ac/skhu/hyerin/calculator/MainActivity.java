@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
     class MyListener implements View.OnClickListener{
         public void onClick(View v){
-            final EditText e = (EditText)findViewById(R.id.e);
+            EditText e = (EditText)findViewById(R.id.e);
             String buttonStr = ((Button)v).getText().toString();
 
             if(buttonStr.equals("AC")) { //AC 누르면 전부 삭제
