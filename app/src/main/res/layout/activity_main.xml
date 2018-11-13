@@ -12,7 +12,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/result"
+            android:id="@+id/textview"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="2dp"
@@ -56,7 +56,8 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:text="@string/botton1"
+                    android:text="@string/button1"
+                    android:onClick="sendMessage"
                     android:textSize="20sp" />
 
                 <Button
@@ -67,7 +68,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:layout_gravity="center"
-                    android:text="@string/botton2"
+                    android:text="@string/button2"
                     android:textSize="20sp" />
 
                 <Button
@@ -78,7 +79,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:layout_gravity="center"
-                    android:text="@string/botton3"
+                    android:text="@string/button3"
                     android:textSize="20sp" />
 
                 <Button
@@ -89,7 +90,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:layout_gravity="center"
-                    android:text="@string/botton4"
+                    android:text="@string/button4"
                     android:textSize="20sp" />
 
             </LinearLayout>
@@ -108,7 +109,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:layout_gravity="center"
-                    android:text="@string/botton5"
+                    android:text="@string/button5"
                     android:textSize="20sp" />
 
                 <Button
@@ -119,7 +120,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:layout_gravity="center"
-                    android:text="@string/botton6"
+                    android:text="@string/button6"
                     android:textSize="20sp" />
 
                 <Button
@@ -130,7 +131,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:layout_gravity="center"
-                    android:text="@string/botton7"
+                    android:text="@string/button7"
                     android:textSize="20sp" />
 
                 <Button
@@ -141,7 +142,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:layout_gravity="center"
-                    android:text="@string/botton8"
+                    android:text="@string/button8"
                     android:textSize="20sp" />
             </LinearLayout>
 
@@ -159,7 +160,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:layout_gravity="center"
-                    android:text="@string/botton9"
+                    android:text="@string/button9"
                     android:textSize="20sp" />
 
                 <Button
@@ -170,7 +171,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:layout_gravity="center"
-                    android:text="@string/botton10"
+                    android:text="@string/button10"
                     android:textSize="20sp" />
 
                 <Button
@@ -181,7 +182,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:layout_gravity="center"
-                    android:text="@string/botton11"
+                    android:text="@string/button11"
                     android:textSize="20sp" />
 
                 <Button
@@ -191,7 +192,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
-                    android:text="@string/botton12"
+                    android:text="@string/button12"
                     android:layout_gravity="center"
                     android:textSize="20sp" />
             </LinearLayout>
@@ -210,7 +211,7 @@
                     android:layout_height="fill_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:text="@string/botton13"
+                    android:text="@string/button13"
                     android:textSize="20sp" />
 
                 <Button
@@ -221,7 +222,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:layout_gravity="center"
-                    android:text="@string/botton14"
+                    android:text="@string/button14"
                     android:textSize="20sp" />
 
                 <Button
@@ -232,7 +233,7 @@
                     android:layout_height="fill_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:text="@string/botton15"
+                    android:text="@string/button15"
                     android:textSize="20sp" />
 
                 <Button
@@ -243,7 +244,7 @@
                     android:layout_height="fill_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:text="@string/botton16"
+                    android:text="@string/button16"
                     android:textSize="20sp" />
             </LinearLayout>
         </LinearLayout>
