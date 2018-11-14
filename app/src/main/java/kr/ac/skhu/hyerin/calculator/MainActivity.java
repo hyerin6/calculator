@@ -7,6 +7,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Stack;
+import java.util.StringTokenizer;
+
 public class MainActivity extends AppCompatActivity {
     private String s = "";
 
@@ -16,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // final EditText e = (EditText)findViewById(R.id.e);
-        final TextView textView = (TextView)findViewById(R.id.textview);
+        // final TextView textView = (TextView)findViewById(R.id.textview);
 
         Button button1 = (Button)findViewById(R.id.button1);
         Button button2 = (Button)findViewById(R.id.button2);
@@ -57,14 +60,37 @@ public class MainActivity extends AppCompatActivity {
 
 
     class MyListener implements View.OnClickListener{
-        public void onClick(View v){
-            EditText e = (EditText)findViewById(R.id.e);
-            String buttonStr = ((Button)v).getText().toString();
+        public void onClick(View v) {
+            EditText e = (EditText) findViewById(R.id.e);
+            TextView textView = (TextView) findViewById(R.id.textview);
+            String buttonStr = ((Button) v).getText().toString();
 
-            if(buttonStr.equals("AC")) { //AC 누르면 전부 삭제
+            if (buttonStr.equals("AC")) { //AC 누르면 (이전 결과 창 제외) 전부 삭제
                 e.setText("");
                 s = "";
             }
+
+            else if (buttonStr.equals("=")) {
+                StringTokenizer st_num = new StringTokenizer(s, "+-/* ");
+                StringTokenizer st_oper = new StringTokenizer(s, "1234567890 ");
+
+                Stack<Integer> stack = new Stack<Integer>(); // 정수 객체만 저장하는 stack
+
+             /*   // stack.push(Integer.parseInt(st_num.nextToken()));
+                while (st_num.hasMoreTokens()) {
+                }
+
+
+
+
+                int tot = 0;
+                while (!stack.isEmpty()) {
+                    tot += stack.pop();
+                }
+                textView.setText(Integer.toString(tot));
+            */
+            }
+
             else {
                 s += buttonStr;
                 e.setText(s);
@@ -72,4 +98,3 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
-
