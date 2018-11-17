@@ -107,9 +107,9 @@ Button.setOnClickListener(lis);
 >( 리스너 클래스를 내부 클래스로 정의할 수 있다. 내부 클래스란 클래스 안에 정의된 클래스를 의미한다.     
 내부 클래스는 자신이 속해있는 클래스의 멤버들에 자유롭게 접근하여 사용할 수 있다는 장점이 있다. )   
   
-* * *  
    
-### 버튼 클릭 시 EditText에 출력
+### 버튼 클릭 시 EditText에 출력  
+(Button)AC를 누르면 이전 결과(TextView)는 그대로 유지되고 입력했던 것 전부가 삭제된다.  
 ```
 class MyListener implements View.OnClickListener{
         public void onClick(View v){
@@ -126,9 +126,39 @@ class MyListener implements View.OnClickListener{
             }
         }
     }
-```    
-
-
-
-
-
+```      
+   
+### StringTokenizer
+StringTokenizer는 긴 문자열을 지정된 구분자를 기준으로 문자열을 슬라이싱하는데 사용된다.  
+ 
+Q. split과의 차이점은 ?   
+Answer)   
+split : String 클래스의 메소드로 추출한 문자를 배열로 저장  
+StringTokeniser : 메소드가 아니라 java.util에 포함되어 있는 자체 클래스  
+  
+#### 생성자/메소드     
+- StringTokeniser(String str, String delim) : 문자열을 지정된 구분자로 나누는 Stringtokennizer를 생성한다.   
+- StringTokenizer(String str, String delim, boolean returnDelims) : 구분자도 토큰으로 간주  
+- int countTokens() : 전체 토큰으로 간주   
+- boolean hasMoreTokens() : 토큰이 남았는지 알려준다.  
+- String nextToken() : 다음 토큰을 반환한다.  
+   
+   * * * 
+      
+### 계산기 로직
+#### 수식의 표기법     
+- 중위 표기법  - 피연산자 사이에 연산자가 존재 
+- 전위 표기법  - 각 피연산자 왼쪽에 연산자가 존재
+- 후위 표기법  -  피연산자 오른쪽에 연산자들이 존재  
+  
+프로젝트에서는 사용자에게 중위 표기법으로 입력받아 후위 표기법으로 변환 후 결과를 출력한다.   
+   
+#### (괄호없는) 중위 표기법 -> 후위 표기법 변환 과정  
+1. 사용자에게 입력 받은 수식에서 맨 왼쪽부터 하나씩 처리한다.  
+2. 피연산자는 일단 후위 표기법을 저장하는 곳에 순서대로 저장한다.   
+3. 연산자는 연산자 대기 공간(스택)에 저장한다.   
+  
+_연산자를 스택에 넣을 때 기존 연산자가 존재하면 정의한 연산자 우선순위에 따라 다르게 처리한다._  
+- 스택에 있는 기존 연산자가 우선순위가 높거나 같을 경우 - 기존 연산자는 스택에서 빠져나와 후위 표기법에 저장,새로운 연산자는 스택에 저장   
+- 스택에 있는 기존 연산자의 우선순위가 낮을 경우 - 기존 연산자는 그대로 두고 새로운 연산자도 스택에 저장  
+4. 더이상 수식이 없으면 스택에 있는 연산자를 후위 표기법에 저장  
