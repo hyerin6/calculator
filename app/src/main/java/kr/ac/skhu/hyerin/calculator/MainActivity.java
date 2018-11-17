@@ -18,9 +18,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // final EditText e = (EditText)findViewById(R.id.e);
-        // final TextView textView = (TextView)findViewById(R.id.textview);
-
         Button button1 = (Button)findViewById(R.id.button1);
         Button button2 = (Button)findViewById(R.id.button2);
         Button button3 = (Button)findViewById(R.id.button3);
@@ -60,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     class MyListener implements View.OnClickListener{
+
+
+        public int operator(String s){
+            if(s == "+" || s == "-") return 1;
+            else return 2;
+        }
+
         public void onClick(View v) {
             EditText e = (EditText) findViewById(R.id.e);
             TextView textView = (TextView) findViewById(R.id.textview);
@@ -74,21 +78,57 @@ public class MainActivity extends AppCompatActivity {
                 StringTokenizer st_num = new StringTokenizer(s, "+-/* ");
                 StringTokenizer st_oper = new StringTokenizer(s, "1234567890 ");
 
-                Stack<Integer> stack = new Stack<Integer>(); // 정수 객체만 저장하는 stack
+                Integer[] numarr = new Integer[st_num.countTokens()];
+                String[] strarr = new String[st_oper.countTokens()];
+                Object[] expression = new Object[st_num.countTokens() + st_oper.countTokens()];
+                Stack<String> stack = new Stack<String>();
 
-             /*   // stack.push(Integer.parseInt(st_num.nextToken()));
-                while (st_num.hasMoreTokens()) {
+                int i = 0;
+                while (st_oper.hasMoreTokens()) {
+                    String oper = st_oper.nextToken();
+                    strarr[i] = oper;
+                    i++;
+                }
+
+                i = 0;
+                while(st_num.hasMoreTokens()) {
+                    int num = Integer.parseInt(st_num.nextToken());
+                    numarr[i] = num;
+                    i++;
+                }
+
+                i = 0;
+                for(int j = 0; j < expression.length; j++) {
+                    // 피연산자
+                    if(j < numarr.length) {
+                        expression[i] = numarr[j];
+                        i++;
+                    }
+                    // 연산자
+                    if(j < strarr.length) {
+                        if(stack.isEmpty())  // 스택이 비었을 경우 - 연산자 push
+                            stack.push(strarr[j]);
+
+                        // 새로운 연산자 <= 기존 연산자
+                        else if(operator(strarr[j]) <= operator(stack.peek())) {
+                            expression[i] = stack.pop();
+                            i++;
+                            stack.push((strarr[j]));
+                        }
+                        // 새로운 연산자 > 기존 연산자
+                        else if(operator(strarr[j]) > operator(stack.peek())){
+                            stack.push(strarr[j]);
+                        }
+                    }
+                }
+                while(!stack.isEmpty()) { // 남은 연산자는 모두 pop해 후위 표기법을 저장하는 곳에 저장한다.
+                    expression[i] = stack.pop();
+                    i++;
                 }
 
 
 
 
-                int tot = 0;
-                while (!stack.isEmpty()) {
-                    tot += stack.pop();
-                }
-                textView.setText(Integer.toString(tot));
-            */
             }
 
             else {
