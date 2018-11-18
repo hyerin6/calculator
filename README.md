@@ -161,5 +161,3 @@ StringTokeniser : 메소드가 아니라 java.util에 포함되어 있는 자체
 - 스택에 있는 기존 연산자의 우선순위가 낮을 경우 - 기존 연산자는 그대로 두고 새로운 연산자도 스택에 저장  
 4. 더이상 수식이 없으면 스택에 있는 연산자를 후위 표기법에 저장    
    
-#### 구현결과 - eclips에서 test함.
-<img width="621" alt="2018-11-17 11 26 37" src="https://user-images.githubusercontent.com/33855307/48662182-aef9e300-eac1-11e8-9988-2a2b2cdcb3a6.png">
