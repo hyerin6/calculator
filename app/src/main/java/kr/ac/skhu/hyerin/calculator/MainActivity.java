@@ -97,37 +97,47 @@ public class MainActivity extends AppCompatActivity {
                     i++;
                 }
 
-                i = 0;
-                for(int j = 0; j < expression.length; j++) {
-                    // 피연산자
-                    if(j < numarr.length) {
-                        expression[i] = numarr[j];
-                        i++;
-                    }
-                    // 연산자
-                    if(j < strarr.length) {
-                        if(stack.isEmpty())  // 스택이 비었을 경우 - 연산자 push
-                            stack.push(strarr[j]);
 
-                        // 새로운 연산자 <= 기존 연산자
-                        else if(operator(strarr[j]) <= operator(stack.peek())) {
-                            expression[i] = stack.pop();
-                            i++;
-                            stack.push((strarr[j]));
-                        }
-                        // 새로운 연산자 > 기존 연산자
-                        else if(operator(strarr[j]) > operator(stack.peek())){
-                            stack.push(strarr[j]);
-                        }
-                    }
-                }
-                while(!stack.isEmpty()) { // 남은 연산자는 모두 pop해 후위 표기법을 저장하는 곳에 저장한다.
-                    expression[i] = stack.pop();
-                    i++;
-                }
+                // 후위표기법으로 사칙연산
+                /*
+                int num1 = 0, num2 = 0;
+		int a = 1;
+		int result = 0;
+
+		Stack<Integer> stack2 = new Stack<Integer>();
 
 
-
+		for(l = 0; l<expression.length; l++) {
+			if(expression[l].equals("+")) {
+				num1 = stack2.pop();
+				num2 = stack2.pop();
+				result = num1 + num2;
+				stack2.push(result);
+			}
+			else if(expression[l].equals("-")) {
+				num1 = stack2.pop();
+				num2 = stack2.pop();
+				result = num2 - num1;
+				stack2.push(result);
+			}
+			else if(expression[l].equals("*")) {
+				num1 = stack2.pop();
+				num2 = stack2.pop();
+				result = num1 * num2;
+				stack2.push(result);
+			}
+			else if(expression[l].equals("/")) {
+				num1 = stack2.pop();
+				num2 = stack2.pop();
+				result = num2 / num1;
+				stack2.push(result);
+			}
+			else{
+				stack2.push((int)expression[l]);
+			}
+		}
+		System.out.println("result = "+stack2.pop());
+                 */
 
             }
 
