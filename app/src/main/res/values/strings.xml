@@ -1,20 +1,20 @@
 <resources>
     <string name="app_name">계산기</string>
     <string name="input">계산을 시작해 보세요 !</string>
-    <string name="button1">7</string>
-    <string name="button2">8</string>
-    <string name="button3">9</string>
-    <string name="button4">/</string>
-    <string name="button5">4</string>
-    <string name="button6">5</string>
-    <string name="button7">6</string>
-    <string name="button8">×</string>
-    <string name="button9">1</string>
-    <string name="button10">2</string>
-    <string name="button11">3</string>
-    <string name="button12">-</string>
-    <string name="button13">AC</string>
-    <string name="button14">0</string>
-    <string name="button15">=</string>
-    <string name="button16">+</string>
+    <string name="button7">7</string>
+    <string name="button8">8</string>
+    <string name="button9">9</string>
+    <string name="buttondiv">/</string>
+    <string name="button4">4</string>
+    <string name="button5">5</string>
+    <string name="button6">6</string>
+    <string name="buttonmul">×</string>
+    <string name="button1">1</string>
+    <string name="button2">2</string>
+    <string name="button3">3</string>
+    <string name="buttonsub">-</string>
+    <string name="buttonAC">AC</string>
+    <string name="button0">0</string>
+    <string name="buttonR">=</string>
+    <string name="buttonPlus">+</string>
 </resources>

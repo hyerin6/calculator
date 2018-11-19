@@ -24,13 +24,13 @@ public class MainActivity extends AppCompatActivity {
         Button button7 = (Button)findViewById(R.id.button7);
         Button button8 = (Button)findViewById(R.id.button8);
         Button button9 = (Button)findViewById(R.id.button9);
-        Button button10 = (Button)findViewById(R.id.buttonC);
-        Button button11 = (Button)findViewById(R.id.buttonD);
-        Button button12 = (Button)findViewById(R.id.buttonM);
-        Button button13 = (Button)findViewById(R.id.buttonP);
-        Button button14 = (Button)findViewById(R.id.buttonR);
-        Button button15 = (Button)findViewById(R.id.buttonX);
-        Button button16 = (Button)findViewById(R.id.button0);
+        Button button0 = (Button)findViewById(R.id.button0);
+        Button buttonAC = (Button)findViewById(R.id.buttonAC);
+        Button buttonmul = (Button)findViewById(R.id.buttonmul);
+        Button buttonsub = (Button)findViewById(R.id.buttonsub);
+        Button buttonPlus = (Button)findViewById(R.id.buttonPlus);
+        Button buttondiv = (Button)findViewById(R.id.buttondiv);
+        Button buttonR = (Button)findViewById(R.id.buttonR);
 
         MyListener listener = new MyListener();
 
@@ -43,13 +43,13 @@ public class MainActivity extends AppCompatActivity {
         button7.setOnClickListener(listener);
         button8.setOnClickListener(listener);
         button9.setOnClickListener(listener);
-        button10.setOnClickListener(listener);
-        button11.setOnClickListener(listener);
-        button12.setOnClickListener(listener);
-        button13.setOnClickListener(listener);
-        button14.setOnClickListener(listener);
-        button15.setOnClickListener(listener);
-        button16.setOnClickListener(listener);
+        button0.setOnClickListener(listener);
+        buttonAC.setOnClickListener(listener);
+        buttondiv.setOnClickListener(listener);
+        buttonmul.setOnClickListener(listener);
+        buttonR.setOnClickListener(listener);
+        buttonPlus.setOnClickListener(listener);
+        buttonsub.setOnClickListener(listener);
     }
 
 
