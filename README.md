@@ -128,7 +128,7 @@ class MyListener implements View.OnClickListener{
     }
 ```      
    
-### StringTokenizer
+### StringTokenizer - 프로젝트에서 사용 X, split을 사용
 StringTokenizer는 긴 문자열을 지정된 구분자를 기준으로 문자열을 슬라이싱하는데 사용된다.  
  
 Q. split과의 차이점은 ?   
