@@ -7,9 +7,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.Stack;
-import java.util.StringTokenizer;
-
 public class MainActivity extends AppCompatActivity {
     private String s = "";
 
@@ -57,13 +54,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     class MyListener implements View.OnClickListener{
-
-
-        public int operator(String s){
-            if(s == "+" || s == "-") return 1;
-            else return 2;
-        }
-
         public void onClick(View v) {
             EditText e = (EditText) findViewById(R.id.e);
             TextView textView = (TextView) findViewById(R.id.textview);
@@ -75,74 +65,88 @@ public class MainActivity extends AppCompatActivity {
             }
 
             else if (buttonStr.equals("=")) {
-                StringTokenizer st_num = new StringTokenizer(s, "+-/* ");
-                StringTokenizer st_oper = new StringTokenizer(s, "1234567890 ");
-
-                Integer[] numarr = new Integer[st_num.countTokens()];
-                String[] strarr = new String[st_oper.countTokens()];
-                Object[] expression = new Object[st_num.countTokens() + st_oper.countTokens()];
-                Stack<String> stack = new Stack<String>();
+               /*
+                Stack stack = new Stack();
+                String[] expression = s.split(" ");
+                String[] expression2 = new String[expression.length];
 
                 int i = 0;
-                while (st_oper.hasMoreTokens()) {
-                    String oper = st_oper.nextToken();
-                    strarr[i] = oper;
+                for (String s1 : expression) {
+                    switch (s1) {
+                        case "+":
+                        case "-":
+                            if (stack.isEmpty()) {
+                                stack.push(s1);
+                                break;
+                            }
+                            while (!stack.isEmpty()) {
+                                expression2[i] = (String) stack.pop();
+                                i++;
+                            }
+                            stack.push(s1);
+                            break;
+
+                        case "*":
+                        case "/":
+                            if (stack.isEmpty()) {
+                                stack.push(s1);
+                                break;
+                            }
+                            String operator = (String) stack.peek();
+                            if (operator == "*" || operator == "/") {
+                                while (!stack.isEmpty()) {
+                                    expression2[i] = (String) stack.pop();
+                                    i++;
+                                }
+                            } else {
+                                stack.push(s1);
+                                break;
+                            }
+                        default:
+                            expression2[i] = s1;
+                            i++;
+                    }
+                }
+                while (!stack.isEmpty()) {
+                    expression2[i] = (String) stack.pop();
                     i++;
                 }
 
-                i = 0;
-                while(st_num.hasMoreTokens()) {
-                    int num = Integer.parseInt(st_num.nextToken());
-                    numarr[i] = num;
-                    i++;
+                int num1, num2;
+                int result;
+
+                Stack<Integer> stack2 = new Stack<Integer>();
+
+                for (i = 0; i < expression2.length; i++) {
+                    if (expression2[i].equals("+")) {
+                        num1 = stack2.pop();
+                        num2 = stack2.pop();
+                        result = num1 + num2;
+                        stack2.push(result);
+                    } else if (expression2[i].equals("-")) {
+                        num1 = stack2.pop();
+                        num2 = stack2.pop();
+                        result = num2 - num1;
+                        stack2.push(result);
+                    } else if (expression2[i].equals("*")) {
+                        num1 = stack2.pop();
+                        num2 = stack2.pop();
+                        result = num1 * num2;
+                        stack2.push(result);
+                    } else if (expression2[i].equals("/")) {
+                        num1 = stack2.pop();
+                        num2 = stack2.pop();
+                        result = num2 / num1;
+                        stack2.push(result);
+                    } else
+                        stack2.push(Integer.parseInt(expression2[i]));
                 }
-
-
-                // 후위표기법으로 사칙연산
-                /*
-                int num1 = 0, num2 = 0;
-		int a = 1;
-		int result = 0;
-
-		Stack<Integer> stack2 = new Stack<Integer>();
-
-
-		for(l = 0; l<expression.length; l++) {
-			if(expression[l].equals("+")) {
-				num1 = stack2.pop();
-				num2 = stack2.pop();
-				result = num1 + num2;
-				stack2.push(result);
-			}
-			else if(expression[l].equals("-")) {
-				num1 = stack2.pop();
-				num2 = stack2.pop();
-				result = num2 - num1;
-				stack2.push(result);
-			}
-			else if(expression[l].equals("*")) {
-				num1 = stack2.pop();
-				num2 = stack2.pop();
-				result = num1 * num2;
-				stack2.push(result);
-			}
-			else if(expression[l].equals("/")) {
-				num1 = stack2.pop();
-				num2 = stack2.pop();
-				result = num2 / num1;
-				stack2.push(result);
-			}
-			else{
-				stack2.push((int)expression[l]);
-			}
-		}
-		System.out.println("result = "+stack2.pop());
-                 */
-
+		        textView.setText((stack2.pop()));
+		        */
             }
 
             else {
-                s += buttonStr;
+                s += buttonStr+" ";
                 e.setText(s);
             }
         }
