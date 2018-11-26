@@ -128,7 +128,7 @@ class MyListener implements View.OnClickListener{
     }
 ```      
    
-### StringTokenizer - 프로젝트에서 사용 X, split을 사용
+### StringTokenizer 
 StringTokenizer는 긴 문자열을 지정된 구분자를 기준으로 문자열을 슬라이싱하는데 사용된다.  
  
 Q. split과의 차이점은 ?   
@@ -161,5 +161,6 @@ StringTokeniser : 메소드가 아니라 java.util에 포함되어 있는 자체
 - 스택에 있는 기존 연산자의 우선순위가 낮을 경우 - 기존 연산자는 그대로 두고 새로운 연산자도 스택에 저장  
 4. 더이상 수식이 없으면 스택에 있는 연산자를 후위 표기법에 저장   
   
-#### 후위표기법으로 사칙연산
-[코드 보러가기](https://github.com/hyerin6/Java2/blob/master/calculator/src/skhu/hyerin/Test.java)
+#### 후위표기법으로 사칙연산  
+[배열로 구현한 코드 보러가기](https://github.com/hyerin6/Java2/blob/master/calculator/src/skhu/hyerin/Test.java)  
+[StringTokenizer 사용한 구현 코드 보러가기](https://github.com/hyerin6/Java2/blob/master/calculator2/src/calculator/Test.java)  
