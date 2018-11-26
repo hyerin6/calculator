@@ -162,5 +162,5 @@ StringTokeniser : 메소드가 아니라 java.util에 포함되어 있는 자체
 4. 더이상 수식이 없으면 스택에 있는 연산자를 후위 표기법에 저장   
   
 #### 후위표기법으로 사칙연산  
-[배열로 구현한 코드 보러가기](https://github.com/hyerin6/Java2/blob/master/calculator/src/skhu/hyerin/Test.java)  
+[배열로 구현한 코드 보러가기](https://github.com/hyerin6/Java2/commit/c9d0fa059154a1d42042a98062fe165059b0c83d)  
 [StringTokenizer 사용한 구현 코드 보러가기](https://github.com/hyerin6/Java2/blob/master/calculator2/src/calculator/Test.java)  
