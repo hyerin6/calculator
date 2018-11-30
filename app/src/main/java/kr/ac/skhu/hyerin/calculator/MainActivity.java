@@ -6,8 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import java.util.Stack;
+import java.util.StringTokenizer;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     EditText editText;
@@ -68,17 +68,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 s = "";
                 break;
             case "=":
-                Stack<String> stack = new Stack<>();
-                String[] expression = s.split(" ");
-                String[] expression2 = new String[expression.length];
 
                 int num1, num2;
                 int result;
+
+                StringTokenizer num = new StringTokenizer(s, "+-/× ");
+                StringTokenizer oper = new StringTokenizer(s, "1234567890 ");
+
+                String[] expression = new String[num.countTokens()+oper.countTokens()];
+                String[] expression2 = new String[expression.length];
+
+                Stack<Object> stack = new Stack<>();
                 Stack<Integer> stack2 = new Stack<>();
 
+                int i = 0;
+                while(num.hasMoreTokens()){
+                    String data = num.nextToken();
+                    expression[i] = data;
+                    i  = i+2;
+                }
 
+                i = 1;
+                while(oper.hasMoreTokens()) {
+                    String data = oper.nextToken();
+                    expression[i] = data;
+                    i = i+2;
+                }
 
-                int i=0;
+                i = 0;
                 for (String s1 : expression) {
                     switch(s1) {
                         case "+":
@@ -88,21 +105,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 break;
                             }
                             while(!stack.isEmpty()) {
-                                expression2[i] = stack.pop();
+                                expression2[i] = (String) stack.pop();
                                 i++;
                             }
                             stack.push(s1);
                             break;
+
                         case "×":
                         case "/":
                             if (stack.isEmpty()) {
                                 stack.push(s1);
                                 break;
                             }
-                            String operator = stack.peek();
+                            String operator = (String)stack.peek();
                             if (operator == "×" || operator == "/" ) {
                                 while(!stack.isEmpty()) {
-                                    expression2[i] = stack.pop();
+                                    expression2[i] = (String) stack.pop();
                                     i++;
                                 }
                             }
@@ -116,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 }
                 while(!stack.isEmpty()) {
-                    expression2[i] = stack.pop();
+                    expression2[i] = (String) stack.pop();
                     i++;
                 }
 
@@ -154,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             default:
-                s += buttonStr + " ";
+                s += buttonStr;
                 editText.setText(s);
                 break;
         }
