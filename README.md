@@ -1,3 +1,13 @@
+# calculator  
+> 사용자로부터 버튼으로 정수와 연산자를 입력받아 사칙연산 결과를 출력해주는 계산기 어플  
+결과가 입력박스 위에 출력되어 다음 연산의 결과가 출력될때까지 사라지지않아
+이전 출력결과가 필요한 경우에 유용합니다.
+#### IDE 
+- Android Studio  
+#### Language  
+- Java
+
+## 진행과정 및 스터디 내용
 ### Buttons in button bars should be borderless..
 경고를 해결하는 방법 2가지  
 
@@ -132,9 +142,8 @@ class MyListener implements View.OnClickListener{
 StringTokenizer는 긴 문자열을 지정된 구분자를 기준으로 문자열을 슬라이싱하는데 사용된다.  
  
 Q. split과의 차이점은 ?   
-Answer)   
-split : String 클래스의 메소드로 추출한 문자를 배열로 저장  
-StringTokeniser : 메소드가 아니라 java.util에 포함되어 있는 자체 클래스  
+- split : String 클래스의 메소드로 추출한 문자를 배열로 저장  
+- StringTokeniser : 메소드가 아니라 java.util에 포함되어 있는 자체 클래스  
   
 #### 생성자/메소드     
 - StringTokeniser(String str, String delim) : 문자열을 지정된 구분자로 나누는 Stringtokennizer를 생성한다.   
