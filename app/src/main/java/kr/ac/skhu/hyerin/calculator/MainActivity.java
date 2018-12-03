@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText editText;
     TextView textView;
     String s = "";
+    String str = "";
     String buttonStr = "";
 
     @Override
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case "AC":
                 editText.setText("");
                 s = "";
+                str = "";
                 break;
             case "=":
 
@@ -172,8 +174,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             default:
+                str += buttonStr + " ";
                 s += buttonStr;
-                editText.setText(s);
+                editText.setText(str);
                 break;
         }
     }
