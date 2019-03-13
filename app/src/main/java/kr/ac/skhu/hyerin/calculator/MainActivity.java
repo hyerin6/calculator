@@ -176,7 +176,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             default:
                 str += buttonStr + " ";
                 s += buttonStr;
-                editText.setText(str);
+                editText.setText(" " + str);
                 break;
         }
     }
