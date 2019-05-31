@@ -7,8 +7,13 @@
 #### Language  
 - Java
 
-## 진행과정 및 스터디 내용
-### Buttons in button bars should be borderless..
+  
+#### 진행과정 및 스터디 내용  
+<details>  
+<summary>view</summary>  
+<div markdown="1">    
+
+### Buttons in button bars should be borderless..  
 경고를 해결하는 방법 2가지  
 
 1. 경고 무시하고 경고 끄기   
@@ -173,3 +178,4 @@ Q. split과의 차이점은 ?
 #### 후위표기법으로 사칙연산  
 [배열로 구현한 코드 보러가기](https://github.com/hyerin6/Java2/commit/c9d0fa059154a1d42042a98062fe165059b0c83d)  
 [StringTokenizer 사용한 구현 코드 보러가기](https://github.com/hyerin6/Java2/blob/master/calculator2/src/calculator/Test.java)  
+</div>
