@@ -151,7 +151,7 @@ Q. split과의 차이점은 ?
 - StringTokeniser : 메소드가 아니라 java.util에 포함되어 있는 자체 클래스  
   
 #### 생성자/메소드     
-- StringTokeniser(String str, String delim) : 문자열을 지정된 구분자로 나누는 Stringtokennizer를 생성한다.   
+- StringTokenizer(String str, String delim) : 문자열을 지정된 구분자로 나누는 Stringtokennizer를 생성한다.   
 - StringTokenizer(String str, String delim, boolean returnDelims) : 구분자도 토큰으로 간주  
 - int countTokens() : 전체 토큰으로 간주   
 - boolean hasMoreTokens() : 토큰이 남았는지 알려준다.  
